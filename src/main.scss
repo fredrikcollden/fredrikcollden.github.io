@@ -1,3 +1,4 @@
-body {
-    color: red;
-}
+@import './src/ui/base/base.scss';
+@import './src/ui/base/typography.scss';
+
+@import './src/ui/components/heading/heading.scss';
