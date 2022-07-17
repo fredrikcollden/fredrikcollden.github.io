@@ -1,0 +1,16 @@
+$font-family: arial;
+
+$font-size--xs: 0.5rem;
+$font-size--s: 0.75rem;
+$font-size--m: 1rem;
+$font-size--l: 1.5rem;
+$font-size--xl: 2rem;
+
+body {
+    font-size: 16px;
+    font-family: $font-family;
+}
+
+h1 {
+    font-size: $font-size--xl;
+}

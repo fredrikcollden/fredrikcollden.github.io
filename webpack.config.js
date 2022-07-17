@@ -5,6 +5,10 @@ module.exports = {
         __dirname + '/src/main.js',
         __dirname + '/src/main.scss'
     ],
+    //devtool: 'inline-source-map',
+    devServer: {
+        static: './',
+    },
     output: {
         filename: 'js/main.min.js',
         path: path.resolve(__dirname, 'dist'),
@@ -28,5 +32,8 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    optimization: {
+        //runtimeChunk: 'single',
+    },
 };
