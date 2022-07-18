@@ -8,6 +8,9 @@ module.exports = {
     //devtool: 'inline-source-map',
     devServer: {
         static: './',
+        client: {
+            overlay: false,
+        },
     },
     output: {
         filename: 'js/main.min.js',
@@ -19,7 +22,9 @@ module.exports = {
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
-                use: [],
+                use: {
+                    loader: "babel-loader",
+                },
             }, {
                 test: /\.scss$/,
                 exclude: /node_modules/,

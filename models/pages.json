@@ -1,12 +1,11 @@
-{
-    "main": {
-        "name": "Main page",
-        "url": "/"
-    },
-    
-    "about": {
-        "name": "About page",
-        "url": "/about/"
-    }
 
-}
+    [
+        {
+            "name": "Main page",
+            "url": "/"
+        },
+        {
+            "name": "About page",
+            "url": "/about/"
+        }
+    ]
