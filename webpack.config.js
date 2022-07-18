@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
     entry: [
-        __dirname + '/src/main.js',
-        __dirname + '/src/main.scss'
+        __dirname + '/src/ui/main.js',
+        __dirname + '/src/ui/main.scss'
     ],
     //devtool: 'inline-source-map',
     devServer: {

@@ -1,0 +1,12 @@
+{
+    "main": {
+        "name": "Main page",
+        "url": "/"
+    },
+    
+    "about": {
+        "name": "About page",
+        "url": "/about/"
+    }
+
+}
