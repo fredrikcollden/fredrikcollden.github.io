@@ -1,7 +1,7 @@
-import {menu} from './components/menu/menu.jsx'
+import MenuWrapper from './components/menu/menuWrapper.jsx'
 
 const components = [
-    menu(),
+    MenuWrapper(),
 ];
 
 //Run init function (if exists) on all components

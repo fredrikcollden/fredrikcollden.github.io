@@ -1,32 +1,33 @@
-import {xhr} from '../../js/xhr.js'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import MenuApp from './menuApp.jsx';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames';
 
-const menu = function () {
-    const containerName = 'menu'
-    const elements = document.querySelectorAll('[data-react-element="'+ containerName + '"]')
-
-    const self = {
-
-        init() {
-            if (elements.length > 0){
-                xhr().sendGetRequest('pages').then(function (data) {
-                    elements.forEach((element) => {
-                        self.initMenu(element, data)
-                    })
-                    
-                }); 
-            }
-        },
-
-        initMenu(element, menuData) {
-            ReactDOM.render(<MenuApp menuData={menuData}/>, element);
-        }
-    }
+const Menu = (props) => {
+    const [currentItem, setCurrentItem] = useState();
     
-    return self;
+    useEffect(() => {
+        if (props.menuCurrentItem) {
+            setCurrentItem(props.menuCurrentItem)
+        }
+        return () => {}
+      }, []);
 
-};
+    return (
+        <div className="menu">
+            {props.model.map((menuItem, key) => {
+                return (
+                    <div className={classNames('menu__item', { 'menu__item--selected': menuItem.page === currentItem })}>
+                        <a className="menu__item-link" href={menuItem.url}>{menuItem.name}</a>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
 
-export {menu};
+Menu.propTypes = {
+    model: PropTypes.array,
+    menuCurrentItem: PropTypes.string
+}
+
+export default Menu;

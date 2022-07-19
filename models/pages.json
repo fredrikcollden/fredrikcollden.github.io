@@ -1,10 +1,12 @@
 
     [
         {
+            "page": "main",
             "name": "Main page",
             "url": "/"
         },
         {
+            "page": "about",
             "name": "About page",
             "url": "/about/"
         }

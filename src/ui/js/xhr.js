@@ -24,4 +24,4 @@ const xhr = function () {
 
 };
 
-export {xhr};
+export default xhr;

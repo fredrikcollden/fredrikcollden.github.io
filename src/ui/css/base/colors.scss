@@ -1,1 +1,12 @@
-$color-primary: brown;
+$color-white: rgba(255,255,255,1);
+$color-white-90: rgba(225,225,225,1);
+$color-black: rgba(0,0,0,1);
+$color-black-90: rgba(30,30,30,1);
+
+$color-primary: $color-white;
+
+$color-text-1: $color-white;
+$color-text-2: $color-white-90;
+
+$color-bg-1: $color-black;
+$color-bg-2: $color-black-90;

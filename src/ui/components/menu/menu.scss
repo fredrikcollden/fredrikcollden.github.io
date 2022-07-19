@@ -1,0 +1,28 @@
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+    background: $color-bg-1;
+    color: $color-text-2;
+
+    &__item {
+        display: block;
+    }
+
+    &__item-link {
+        display: block;
+        padding: 10px;
+
+        &:hover {
+            background: $color-bg-2;
+        }
+
+        .menu__item--selected & {
+            font-weight: bold;
+            background: $color-bg-2;
+            color: $color-text-1;
+        }
+    }
+}
