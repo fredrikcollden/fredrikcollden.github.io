@@ -5,6 +5,7 @@ const xhr = function () {
 
     const models = {
         pages: 'pages.json',
+        pagedata_start: 'startpage.json'
     }
 
     const self = {

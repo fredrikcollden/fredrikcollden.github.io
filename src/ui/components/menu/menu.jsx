@@ -6,9 +6,6 @@ const Menu = (props) => {
     const [currentItem, setCurrentItem] = useState();
     
     useEffect(() => {
-        if (props.menuCurrentItem) {
-            setCurrentItem(props.menuCurrentItem)
-        }
         return () => {}
       }, []);
 
@@ -16,7 +13,7 @@ const Menu = (props) => {
         <div className="menu">
             {props.model.map((menuItem, key) => {
                 return (
-                    <div className={classNames('menu__item', { 'menu__item--selected': menuItem.page === currentItem })}>
+                    <div className={classNames('menu__item', { 'menu__item--selected': menuItem.page === props.menuCurrentItem })}>
                         <a className="menu__item-link" href={menuItem.url}>{menuItem.name}</a>
                     </div>
                 )

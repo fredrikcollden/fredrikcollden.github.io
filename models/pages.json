@@ -1,8 +1,8 @@
 
     [
         {
-            "page": "main",
-            "name": "Main page",
+            "page": "start",
+            "name": "Main page start",
             "url": "/"
         },
         {
