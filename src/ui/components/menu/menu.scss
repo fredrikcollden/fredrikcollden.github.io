@@ -12,7 +12,9 @@
     }
 
     &__item-link {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 10px;
 
         &:hover {
@@ -24,5 +26,9 @@
             background: $color-bg-hover;
             color: $color-text;
         }
+    }
+
+    &__item-icon {
+        font-size: 1.2em !important;
     }
 }

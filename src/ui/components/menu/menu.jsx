@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames';
+import classNames from 'classnames'
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import PlayCircleOutlineRoundedIcon from '@mui/icons-material/PlayCircleOutlineRounded';
 
 const Menu = (props) => {
     const [currentItem, setCurrentItem] = useState();
@@ -14,7 +16,10 @@ const Menu = (props) => {
             {props.model.map((menuItem, key) => {
                 return (
                     <div className={classNames('menu__item', { 'menu__item--selected': menuItem.page === props.menuCurrentItem })}>
-                        <a className="menu__item-link" href={menuItem.url}>{menuItem.name}</a>
+                        <a className="menu__item-link" href={menuItem.url}>
+                            <KeyboardArrowRightRoundedIcon className="menu__item-icon" />
+                            {menuItem.name}
+                            </a>
                     </div>
                 )
             })}
