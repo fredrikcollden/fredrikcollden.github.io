@@ -21,11 +21,11 @@ body {
 }
 
 a {
-    color: $color-text-1;
+    color: $color-text;
     text-decoration: none;
     
     &:hover, &:focus {
-        color: $color-text-2;
+        color: $color-text-hover;
     }
 }
 

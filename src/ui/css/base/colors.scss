@@ -1,12 +1,25 @@
-$color-white: rgba(255,255,255,1);
-$color-white-90: rgba(225,225,225,1);
-$color-black: rgba(0,0,0,1);
-$color-black-90: rgba(30,30,30,1);
+//Colors
+$blue-500: #7588c4;
+$blue-600: #6379bc;
+$blue-700: #475ea6;
+$blue-800: #384982;
+$blue-900: #28355e;
 
-$color-primary: $color-white;
+$black-500: #555555;
+$black-600: #484848;
+$black-700: #2f2f2f;
+$black-800: #151515;
+$black-900: #000000;
 
-$color-text-1: $color-white;
-$color-text-2: $color-white-90;
+$white-500: #ffffff;
+$white-600: #f2f2f2;
+$white-700: #d9d9d9;
+$white-800: #bfbfbf;
+$white-900: #a6a6a6;
 
-$color-bg-1: $color-black;
-$color-bg-2: $color-black-90;
+//Functional colors
+$color-text: $white-700;
+$color-text-hover: $white-600;
+
+$color-bg: $black-800;
+$color-bg-hover: $black-700;
