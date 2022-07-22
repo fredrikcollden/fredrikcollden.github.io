@@ -25,7 +25,7 @@ const Page = (props) => {
         });
 
         if (props.pagetype !== "") {
-            xhr().sendGetRequest('pagedata_' + props.pagetype).then(function (data) {
+            xhr().getWpPosts('startpage').then(function (data) {
                 setPageData(data)
             });
         }   
