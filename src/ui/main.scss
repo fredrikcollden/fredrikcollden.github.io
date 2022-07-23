@@ -1,10 +1,12 @@
 @import './css/base/normalize.scss';
+@import './css/base/mediaqueries.scss';
 @import './css/base/colors.scss';
 @import './css/base/base.scss';
 @import './css/base/typography.scss';
+@import './css/base/section.scss';
+@import './css/base/container.scss';
 
 @import './components/main/main.scss';
-@import './components/section/section.scss';
 @import './components/heading/heading.scss';
 @import './components/header/header.scss';
 @import './components/footer/footer.scss';

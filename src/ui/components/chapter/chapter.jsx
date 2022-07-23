@@ -9,11 +9,18 @@ const Chapter = (props) => {
         return () => {}
     }, []);
 
+    const model = { ...props.model }
+
     return (
         <div className="chapter">
+            {model.bg && (
+                <img className="chapter__bg chapter__bg--fade" src={model.bg} />
+            )}
             <div className="section">
                 <div className="container">
-                    <p className="chapter__title">{props.model.title}</p>
+                    <div className="chapter__content">
+                        <p className="chapter__title">{model.title}</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,8 @@
+.section {
+    padding: 20px 10px;
+    text-align: center;
+
+    @include mq-tablet {
+        padding: 20px 20px;
+    }
+}
