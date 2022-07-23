@@ -1,34 +1,30 @@
 {
-    "book": [
-        {
-            "name": "chapter1",
-            "title": "Chapter One",
-            "text": "Some text"
-        },
-        {
-            "name": "chapter2",
-            "title": "Chapter Two",
-            "text": "Some text"
-        },
-        {
-            "name": "chapter3",
-            "title": "Chapter Three",
-            "text": "Some text"
-        },
-        {
-            "name": "chapter4",
-            "title": "Chapter Four",
-            "text": "Some text"
-        },
-        {
-            "name": "chapter5",
-            "title": "Chapter Fiver",
-            "text": "Some text"
-        },
-        {
-            "name": "chapter6",
-            "title": "Chapter Six",
-            "text": "Some text"
-        }
-    ]
+"book": [
+    {
+        "name": "chapter-1",
+        "title": "Chapter 1",
+        "text": "<p>Chapter 1 text</p>\n",
+        "bg": "https://fredrikcollden.files.wordpress.com/2022/07/por_que_o_minecarft_faz_tanto_sucesso.jpg",
+        "graphics": [
+            {
+                "type": "graphics-2",
+                "url": "https://fredrikcollden.files.wordpress.com/2022/07/b07etfye15f21.jpg"
+            },
+            {
+                "type": "graphics-1",
+                "url": "https://fredrikcollden.files.wordpress.com/2022/07/5fb4c1527811539eee441c21-funny-names-for-dogs.jpeg"
+            }
+        ]
+    },
+    {
+        "name": "chapter-2",
+        "title": "Chapter 2",
+        "text": "<p>Text för chapter 2</p>\n",
+        "bg": null,
+        "graphics": []
+    }
+]
 }
+
+
+

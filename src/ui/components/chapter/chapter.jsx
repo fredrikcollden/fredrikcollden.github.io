@@ -21,7 +21,7 @@ const Chapter = (props) => {
 }
 
 Chapter.propTypes = {
-    model: PropTypes.Object,
+    model: PropTypes.object,
 }
 
 export default Chapter;

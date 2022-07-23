@@ -15,7 +15,7 @@ const Book = (props) => {
         <div className="book">
             {chapters.map((chapter, key) => {
                 return (
-                    <Chapter model={chapter} />
+                    <Chapter key={`menuitem${key}`} model={chapter} />
                 )
             })}
         </div>

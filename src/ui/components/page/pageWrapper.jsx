@@ -1,6 +1,6 @@
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import Page from './page.jsx';
 
 const PageWrapper = function () {
@@ -14,7 +14,8 @@ const PageWrapper = function () {
                 const pageType = page.dataset.pagetype;
                 
                 if (pageType) {
-                    ReactDOM.render(<Page pagetype={pageType} />, page);
+                    const root = ReactDOM.createRoot(page);
+                    root.render(<Page pagetype={pageType} />);
                 }
             })
         },

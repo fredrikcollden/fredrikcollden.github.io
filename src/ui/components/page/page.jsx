@@ -33,19 +33,19 @@ const Page = (props) => {
 
     return (
         <React.Fragment>
-            <header class="header">
+            <header className="header">
                 <Menu model={menuData} menuCurrentItem={pageType} />
             </header>
-            <main class="main">
-                <div class="main__content">
+            <main className="main">
+                <div className="main__content">
                     {pageType === 'start' && pageData && (
                         <StartPage model={pageData} />
                     )}
                 </div>
             </main>
-            <footer class="footer">
-                <div class="section">
-                    <div class="container">
+            <footer className="footer">
+                <div className="section">
+                    <div className="container">
                         Footer
                     </div>
                 </div>

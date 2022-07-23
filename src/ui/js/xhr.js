@@ -21,8 +21,13 @@ const xhr = function () {
             }
         },
 
-        async getWpPosts(action) {
+        async getWpPosts() {
             try {
+                if (process.env.NODE_ENV === 'development') {
+                    const respMock = await axios.get(urlPrefix + 'startpage.json');
+                    return(respMock.data);
+                }
+                
                 const resp = await axios.get(wpUrlPrefix + 'posts/?category=startpage');
                 console.log('wp resp posts')
                 console.log(resp);
@@ -54,7 +59,7 @@ const xhr = function () {
                     });
                     result.book.unshift(chapter)
                 });
-                
+                console.log(result)
                 return(result);
             } catch (err) {
                 // Handle Error Here

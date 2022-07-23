@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js --mode='production'",
-    "start": "webpack serve --open --mode='production' --output-public-path=/dist/"
+    "start": "webpack serve --open --mode='production' --output-public-path=/dist/",
+    "dev": "webpack serve --open --mode='development' --output-public-path=/dist/"
   },
   "repository": {
     "type": "git",

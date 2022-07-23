@@ -15,7 +15,7 @@ const Menu = (props) => {
         <div className="menu">
             {props.model.map((menuItem, key) => {
                 return (
-                    <div className={classNames('menu__item', { 'menu__item--selected': menuItem.page === props.menuCurrentItem })}>
+                    <div key={`menuitem${key}`} className={classNames('menu__item', { 'menu__item--selected': menuItem.page === props.menuCurrentItem })}>
                         <a className="menu__item-link" href={menuItem.url}>
                             <KeyboardArrowRightRoundedIcon className="menu__item-icon" />
                             {menuItem.name}

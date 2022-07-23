@@ -18,7 +18,7 @@ const StartPage = (props) => {
 }
 
 StartPage.propTypes = {
-    model: PropTypes.Object,
+    model: PropTypes.object,
 }
 
 export default StartPage;
