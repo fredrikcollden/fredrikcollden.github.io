@@ -9,13 +9,29 @@
     &__bg {
         display: block;
         position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: red;
+    }
+
+    &__bg-img {
+        display: block;
+        position: absolute;
         height: 100%;
         width: 100%;
         object-fit: cover;
-        overflow: hidden;
-
-        &--fade {
-            
-        }
     }
+
+    &__bg-fade {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: calc(100% + 2px);
+        left: -2px;
+    }
+
+    
 }

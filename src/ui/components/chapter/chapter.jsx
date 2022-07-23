@@ -14,7 +14,10 @@ const Chapter = (props) => {
     return (
         <div className="chapter">
             {model.bg && (
-                <img className="chapter__bg chapter__bg--fade" src={model.bg} />
+                <div className="chapter__bg">
+                    <img className="chapter__bg-img" src={model.bg} />
+                    <img src="dist/images/fade.svg" className="chapter__bg-fade"/>
+                </div>
             )}
             <div className="section">
                 <div className="container">
