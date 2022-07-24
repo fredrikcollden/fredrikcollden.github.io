@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames';
+import SvgFade from '../svgfade/svgfade.jsx';
 
 const Chapter = (props) => {
     
@@ -12,11 +13,13 @@ const Chapter = (props) => {
     const model = { ...props.model }
 
     return (
-        <div className="chapter">
+        <div className="chapter chapter--color-black chapter--align-left">
             {model.bg && (
-                <div className="chapter__bg">
-                    <img className="chapter__bg-img" src={model.bg} />
-                    <img src="dist/images/fade.svg" className="chapter__bg-fade"/>
+                <div className="chapter__bg-wrapper">
+                    <div className="chapter__bg">
+                        <img className="chapter__bg-img" src={model.bg} />
+                        <SvgFade />
+                    </div>
                 </div>
             )}
             <div className="section">
