@@ -3,12 +3,45 @@
     text-align: center;
 
     &--color-black {
-        background-color: black;
+        background-color: $color-chapter-black;
+        color: $color-text;
+    }
+
+    &--color-red {
+        background-color: $color-chapter-red;
+        color: $color-text;
+    }
+
+    &--color-yellow {
+        background-color: $color-chapter-yellow;
+        color: $color-text-contrast;
     }
 
     &__content {
         position: relative;
         min-height: 360px;
+        max-width: 400px;
+
+        .chapter--align-left & {
+            padding-right: 50px;
+
+            @include mq-tablet {
+                padding-right: 40%;
+            }
+        }
+
+        .chapter--align-right & {
+            padding-left: 50px;
+
+            @include mq-tablet {
+                padding-left: 40%;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 0.9em;
+        line-height: 1.5;
     }
 
     &__bg-wrapper {
@@ -21,8 +54,26 @@
         height: 100%;
 
         .chapter--align-left & {
-            justify-content: flex-end;
-            left: -10%;
+            //justify-content: flex-end;
+            left: 120px;
+
+            @include mq-tablet {
+                left: 20%;
+            }
+        }
+
+        .chapter--align-right & {
+            //justify-content: flex-start;
+            left: -120px;
+
+            @include mq-tablet {
+                left: -20%;
+            }
+        }
+
+        .chapter--align-center & {
+            justify-content: center;
+            left: 0%;
         }
     }
 
@@ -50,17 +101,19 @@
         object-fit: cover;
     }
 
-    &__bg-fade {
-        display: block;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        object-fit: fill;
+    &__fade-wrapper {
+        color: green;
 
         &--color-black {
-            color: black;
+            color: $color-chapter-black !important;
+        }
+    
+        &--color-red {
+            color: $color-chapter-red !important;
+        }
+    
+        &--color-yellow {
+            color: $color-chapter-yellow !important;
         }
     }
-
-    
 }

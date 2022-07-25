@@ -2,7 +2,9 @@ const axios = require('axios').default;
 
 const xhr = function () {
     const urlPrefix = '/models/';
-    const wpUrlPrefix = 'https://public-api.wordpress.com/rest/v1.1/sites/fredrikcollden.wordpress.com/';
+    
+    //const wpUrlPrefix = 'https://public-api.wordpress.com/rest/v1.1/sites/fredrikcollden.wordpress.com/';
+    const wpUrlPrefix = 'https://public-api.wordpress.com/wp/v2/sites/fredrikcollden.wordpress.com/';
 
     const models = {
         pages: 'pages.json',
@@ -34,29 +36,59 @@ const xhr = function () {
 
                 let result = {}
                 result.book = []
-                resp.data.posts.forEach(post => {
+                resp.data.forEach(post => {
                     let chapter = {}
                     
                     chapter.name = post.slug
-                    chapter.title = post.title
-                    chapter.text = post.excerpt
+                    chapter.title = post.title.rendered
+                    chapter.text = post.excerpt.rendered
+                    chapter.color = 'black'
+                    chapter.align = 'left'
                     chapter.bg = null
                     chapter.graphics = []
 
-                    const attachments = Object.keys(post.attachments);
+                    //Parse propsdata from WP-post
+                    const postContentHtml = post.content.rendered
+                    let postPropsHtml = ""
+                    if (postContentHtml.indexOf("<code>") >= 0) {
+                        postPropsHtml = postContentHtml.substring(
+                            postContentHtml.indexOf("<code>") + 6, 
+                            postContentHtml.lastIndexOf("</code>")
+                        )
+                        postPropsHtml = self.decodeHtml(postPropsHtml)
 
-                    attachments.forEach((key, index) => {
-                        const attachment = post.attachments[key]
-                        if (attachment.caption == 'background') {
-                            chapter.bg = attachment.URL
-                        }
-                        if (attachment.caption == 'graphics-1' || attachment.caption == 'graphics-2') {
-                            chapter.graphics.push({
-                                'type': attachment.caption,
-                                'url': attachment.URL
-                            })
-                        }
-                    });
+                        const backgroundProp = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:background-url>', 
+                            '</xml:background-url>')
+                        
+                        const graphic1 = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:graphic1-url>', 
+                            '</xml:graphic1-url>')
+
+                        const graphic2 = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:graphic2-url>', 
+                            '</xml:graphic2-url>')
+
+                        const color = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:layout-color>', 
+                            '</xml:layout-color>')
+
+                        const align = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:layout-align>', 
+                            '</xml:layout-align>')
+
+                        backgroundProp !== null ? chapter.bg = backgroundProp : null   
+                        graphic1 !== null ? chapter.graphics.unshift(graphic1) : null  
+                        graphic2 !== null ? chapter.graphics.unshift(graphic2) : null
+                        color !== null ? chapter.color = color : null     
+                        align !== null ? chapter.align = align : null     
+                    }
+
                     result.book.unshift(chapter)
                 });
                 console.log(result)
@@ -65,6 +97,25 @@ const xhr = function () {
                 // Handle Error Here
                 console.error(err);
             }
+        },
+
+        decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        },
+
+        getPropFromString(htmlString, propName, propNameEnd) {
+            let returnVal = null
+            let propNameLength = propName.length
+
+            if (htmlString.indexOf(propName) >= 0) {
+                returnVal = htmlString.substring(
+                    htmlString.indexOf(propName) + propNameLength, 
+                    htmlString.lastIndexOf(propNameEnd)
+                )
+            }
+            return returnVal
         }
     }
     
