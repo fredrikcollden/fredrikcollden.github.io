@@ -1,7 +1,9 @@
 .svgfade {
     display: block;
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    top: -1px;
+    left: -1px;
     object-fit: fill;
 }

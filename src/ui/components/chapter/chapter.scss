@@ -1,6 +1,7 @@
 .chapter {
     position: relative;
     text-align: center;
+    overflow: hidden;
 
     &--color-black {
         background-color: $color-chapter-black;
