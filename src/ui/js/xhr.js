@@ -41,7 +41,7 @@ const xhr = function () {
                     
                     chapter.name = post.slug
                     chapter.title = post.title.rendered
-                    chapter.text = post.excerpt.rendered
+                    chapter.text = ""
                     chapter.color = 'black'
                     chapter.align = 'left'
                     chapter.bg = null
@@ -49,6 +49,14 @@ const xhr = function () {
 
                     //Parse propsdata from WP-post
                     const postContentHtml = post.content.rendered
+
+                    let contentText = postContentHtml.substring(
+                        0, 
+                        postContentHtml.lastIndexOf('<pre')
+                    )
+
+                    chapter.text = contentText;
+
                     let postPropsHtml = ""
                     if (postContentHtml.indexOf("<code>") >= 0) {
                         postPropsHtml = postContentHtml.substring(

@@ -6,16 +6,31 @@
     &--color-black {
         background-color: $color-chapter-black;
         color: $color-text;
+        text-shadow: 
+        -1px 0 20px $color-chapter-black,
+        0 0 20px $color-chapter-black,
+        1px 0 20px $color-chapter-black
+        ;
     }
 
     &--color-red {
         background-color: $color-chapter-red;
         color: $color-text;
+        text-shadow: 
+            -1px 0 20px $color-chapter-red,
+            0 0 20px $color-chapter-red,
+            1px 0 20px $color-chapter-red
+        ;
     }
 
     &--color-yellow {
         background-color: $color-chapter-yellow;
         color: $color-text-contrast;
+        text-shadow: 
+        -1px 0 20px $color-chapter-yellow,
+        0 0 20px $color-chapter-yellow,
+        1px 0 20px $color-chapter-yellow
+        ;
     }
 
     &__content {
@@ -24,7 +39,7 @@
         max-width: 400px;
 
         .chapter--align-left & {
-            padding-right: 50px;
+            padding-right: 4rem;
 
             @include mq-tablet {
                 padding-right: 40%;
@@ -32,12 +47,16 @@
         }
 
         .chapter--align-right & {
-            padding-left: 50px;
+            padding-left: 4rem;
 
             @include mq-tablet {
                 padding-left: 40%;
             }
         }
+    }
+
+    &__title {
+        margin-top: 0;
     }
 
     &__text {
