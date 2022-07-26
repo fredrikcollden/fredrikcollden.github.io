@@ -20,12 +20,18 @@ $white-900: #a6a6a6;
 //Functional colors
 $color-text: $white-600;
 $color-text-hover: $white-500;
-$color-text-contrast: $black-800;
-$color-text-constrast-hover: $black-700;
+$color-text-contrast: $black-900;
+$color-text-constrast-hover: $blue-700;
 
 $color-chapter-black: $black-800;
+$color-chapter-black-fade: $black-800;
+$color-chapter-black-contrast: $black-800;
 $color-chapter-red: rgb(171, 40, 66);
+$color-chapter-red-fade: rgb(192, 55, 91);
+$color-chapter-red-contrast: rgb(24, 71, 107);
 $color-chapter-yellow: rgb(241, 246, 74);
+$color-chapter-yellow-fade: rgb(246, 183, 74);
+$color-chapter-yellow-contrast: rgb(208, 62, 118);
 
 $color-bg: $black-800;
 $color-bg-hover: $black-700;

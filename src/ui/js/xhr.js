@@ -46,6 +46,7 @@ const xhr = function () {
                     chapter.align = 'left'
                     chapter.bg = null
                     chapter.graphics = []
+                    chapter.layoutDecoration = null
 
                     //Parse propsdata from WP-post
                     const postContentHtml = post.content.rendered
@@ -68,33 +69,45 @@ const xhr = function () {
                         const backgroundProp = self.getPropFromString(
                             postPropsHtml, 
                             '<xml:background-url>', 
-                            '</xml:background-url>')
+                            '</xml:background-url>'
+                        )
                         
                         const graphic1 = self.getPropFromString(
                             postPropsHtml, 
                             '<xml:graphic1-url>', 
-                            '</xml:graphic1-url>')
+                            '</xml:graphic1-url>'
+                        )
 
                         const graphic2 = self.getPropFromString(
                             postPropsHtml, 
                             '<xml:graphic2-url>', 
-                            '</xml:graphic2-url>')
+                            '</xml:graphic2-url>'
+                        )
 
                         const color = self.getPropFromString(
                             postPropsHtml, 
                             '<xml:layout-color>', 
-                            '</xml:layout-color>')
+                            '</xml:layout-color>'
+                        )
 
                         const align = self.getPropFromString(
                             postPropsHtml, 
                             '<xml:layout-align>', 
-                            '</xml:layout-align>')
+                            '</xml:layout-align>'
+                        )
+
+                        const layoutDecoration = self.getPropFromString(
+                            postPropsHtml, 
+                            '<xml:layout-decoration>', 
+                            '</xml:layout-decoration>'
+                        )
 
                         backgroundProp !== null ? chapter.bg = backgroundProp : null   
                         graphic1 !== null ? chapter.graphics.unshift(graphic1) : null  
                         graphic2 !== null ? chapter.graphics.unshift(graphic2) : null
                         color !== null ? chapter.color = color : null     
                         align !== null ? chapter.align = align : null     
+                        layoutDecoration !== null ? chapter.layoutDecoration = layoutDecoration : null     
                     }
 
                     result.book.unshift(chapter)

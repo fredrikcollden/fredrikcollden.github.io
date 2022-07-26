@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames';
-import SvgFade from '../svgfade/svgfade.jsx';
+import BackgroundDecoration from '../BackgroundDecoration/backgroundDecoration.jsx';
 
 const Chapter = (props) => {
     
@@ -17,19 +17,22 @@ const Chapter = (props) => {
         [`chapter--align-${model.align}`]: model.align 
     })
 
-    const chapterFadeWrapperClassNames = classNames('chapter__fade-wrapper', { 
-        [`chapter__fade-wrapper--color-${model.color}`]: model.color 
+    const chapterBgDecorationWrapperClassNames = classNames('chapter__bg-decoration-wrapper', { 
+        [`chapter__bg-decoration-wrapper--color-${model.color}`]: model.color 
     })
 
     return (
         <div className={chapterClassNames}>
-            {model.bg && (
+            {(model.bg || model.layoutDecoration) && (
                 <div className="chapter__bg-wrapper">
                     <div className="chapter__bg">
-                        <img className="chapter__bg-img" src={model.bg} />
-                        <div className={chapterFadeWrapperClassNames}>
-                            <SvgFade color={model.color}/>
-                        </div>
+                        {model.bg && (<img className="chapter__bg-img" src={model.bg} />)}
+                        {model.layoutDecoration && (
+                            <div className={chapterBgDecorationWrapperClassNames}>
+                                <BackgroundDecoration layoutDecoration={model.layoutDecoration} color={model.color}/>
+                            </div>
+                        )}
+                        
                     </div>
                 </div>
             )}

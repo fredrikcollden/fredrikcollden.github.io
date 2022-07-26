@@ -108,7 +108,15 @@
         max-width: 500px;
 
         .chapter--color-black & {
-            fill: blue;
+            background-color: $color-chapter-black-fade;
+        }
+
+        .chapter--color-yellow & {
+            background-color: $color-chapter-yellow-fade;
+        }
+
+        .chapter--color-red & {
+            background-color: $color-chapter-red-fade;
         }
 
     }
@@ -121,8 +129,12 @@
         object-fit: cover;
     }
 
-    &__fade-wrapper {
-        color: green;
+    &__bg-decoration-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
 
         &--color-black {
             color: $color-chapter-black !important;
